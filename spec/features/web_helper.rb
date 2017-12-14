@@ -1,3 +1,10 @@
+def sign_up
+  visit '/users/new'
+  fill_in :email, with: 'xin@example.com'
+  fill_in :password, with: 'password'
+  click_button "Sign Up"
+end
+
 def add_bookmark(name, tag)
   visit '/links/new'
   fill_in 'url',   with: 'http://www.makersacademy.com/'
