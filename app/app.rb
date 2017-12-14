@@ -1,7 +1,7 @@
+ENV['RACK_ENV'] ||= 'development'
 require 'sinatra/base'
 require_relative 'data_mapper_setup'
 
-ENV['RACK_ENV'] ||= 'development'
 
 class BookmarkManager < Sinatra::Base
 
@@ -19,8 +19,8 @@ class BookmarkManager < Sinatra::Base
     params[:tags].split(", ").each do |tag|
       a_tag = Tag.first_or_create(name: tag)
       link.tags << a_tag
-      link.save
     end
+    link.save
     redirect to('/links')
   end
 
