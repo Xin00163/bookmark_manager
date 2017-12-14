@@ -7,11 +7,10 @@ feature 'Adding tags' do
   end
 
   scenario 'I can add multiple tags to a new link' do
-    add_bookmark('Makers Academy', 'education')
-    add_tag('growth')
-    add_tag('coding')
+    add_bookmark('Makers Academy', 'education, growth, coding')
     link = Link.first
-    expect(page).to have_content '-education -growth -coding'
+    # expect(page).to have_content '-education -growth -coding'
+    expect(link.tags.map(&:name)).to include("education", "growth", "coding")
   end
 
 end
