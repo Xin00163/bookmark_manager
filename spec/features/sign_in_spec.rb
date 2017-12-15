@@ -10,5 +10,7 @@ feature 'has a functioning login page' do
   scenario 'does not create new user if password is mismatched' do
     sign_up_badly
     expect { sign_up_badly }.to change(User, :count).by(0)
+    expect(page).to have_current_path('/users/new')
+    expect(page).to have_content "Password and confirmation password do not match"
   end
 end

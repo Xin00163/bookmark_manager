@@ -4,6 +4,7 @@ require './app/app.rb'
 require './app/models/link.rb'
 require './app/models/user.rb'
 
+require 'sinatra/flash'
 require 'capybara'
 require 'capybara/rspec'
 require 'database_cleaner'

@@ -17,3 +17,5 @@ end
 
 gem 'rake'
 gem 'bcrypt'
+
+gem 'sinatra-flash'
