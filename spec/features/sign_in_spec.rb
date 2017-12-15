@@ -13,4 +13,14 @@ feature 'has a functioning login page' do
     expect(page).to have_current_path('/users/new')
     expect(page).to have_content "Password and confirmation password do not match"
   end
+
+  scenario 'user cannot sign up without entering an email' do
+    sign_up_without_email
+    expect { sign_up_without_email }.to change(User, :count).by(0)
+  end
+
+  scenario 'user cannot sign up without entering an email' do
+    sign_up_with_invalid_email
+    expect { sign_up_with_invalid_email }.to change(User, :count).by(0)
+  end
 end

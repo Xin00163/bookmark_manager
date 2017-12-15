@@ -14,6 +14,21 @@ def sign_up_badly
   click_button "Sign Up"
 end
 
+def sign_up_without_email
+  visit '/users/new'
+  fill_in :email, with: ''
+  fill_in :password, with: 'password'
+  fill_in :password_confirmation, with: 'password'
+  click_button "Sign Up"
+end
+
+def sign_up_with_invalid_email
+  visit '/users/new'
+  fill_in :email, with: 'invalid@email'
+  fill_in :password, with: 'password'
+  fill_in :password_confirmation, with: 'password'
+  click_button "Sign Up"
+end
 
 def add_bookmark(name, tag)
   visit '/links/new'
