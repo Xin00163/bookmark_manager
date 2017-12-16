@@ -30,6 +30,13 @@ def sign_up_with_invalid_email
   click_button "Sign Up"
 end
 
+def sign_in(email:, password:)
+  visit '/sessions/new'
+  fill_in :email, with: email
+  fill_in :password, with: password
+  click_button 'Sign in'
+end
+
 
 def add_bookmark(name, tag)
   visit '/links/new'
