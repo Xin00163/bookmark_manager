@@ -1,6 +1,6 @@
 def sign_up
   visit '/users/new'
-  fill_in :email, with: 'xin@example.com'
+  fill_in :email, with: 'yan@example.com'
   fill_in :password, with: 'password'
   fill_in :password_confirmation, with: 'password'
   click_button "Sign Up"
@@ -29,6 +29,7 @@ def sign_up_with_invalid_email
   fill_in :password_confirmation, with: 'password'
   click_button "Sign Up"
 end
+
 
 def add_bookmark(name, tag)
   visit '/links/new'
